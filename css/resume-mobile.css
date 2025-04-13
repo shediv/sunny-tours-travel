@@ -1,0 +1,247 @@
+/* Mobile-first responsive styles for resume editor */
+
+/* Base responsive styles */
+@media screen and (max-width: 768px) {
+    /* General layout */
+    body {
+        font-size: 14px;
+        line-height: 1.4;
+    }
+
+    /* Header adjustments */
+    .header {
+        padding: 10px;
+    }
+
+    .nav-container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .logo {
+        max-width: 120px;
+        margin-bottom: 10px;
+    }
+
+    /* Main content */
+    .section {
+        padding: 15px;
+    }
+
+    .section-title {
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+
+    /* Resume editor specific */
+    .initial-loading {
+        padding: 20px;
+    }
+
+    .tip-box {
+        width: 100%;
+        padding: 0 15px;
+        font-size: 16px;
+    }
+
+    /* Form elements */
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    textarea,
+    select {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+        font-size: 16px; /* Better touch target on mobile */
+    }
+
+    /* Buttons */
+    button,
+    .submit-btn {
+        width: 100%;
+        padding: 12px;
+        margin-bottom: 10px;
+        font-size: 16px;
+        border-radius: 6px;
+    }
+
+    /* Grid adjustments */
+    .grid-container {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    /* Card styles */
+    .card {
+        margin-bottom: 15px;
+        padding: 15px;
+        border-radius: 8px;
+    }
+
+    /* Navigation menu */
+    .nav-menu {
+        width: 100%;
+    }
+
+    .nav-menu.active {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .nav-link {
+        padding: 12px;
+        width: 100%;
+        text-align: left;
+    }
+
+    /* Menu toggle */
+    .menu-toggle {
+        display: block;
+        position: absolute;
+        right: 15px;
+        top: 15px;
+    }
+
+    /* Modal adjustments */
+    .modal-content {
+        width: 95%;
+        margin: 20px auto;
+        border-radius: 8px;
+    }
+
+    .modal-header {
+        padding: 15px;
+    }
+
+    .modal-body {
+        padding: 15px;
+    }
+
+    .modal-footer {
+        padding: 15px;
+    }
+
+    /* Toast notifications */
+    .toast {
+        width: 90%;
+        margin: 10px auto;
+    }
+
+    /* Loading states */
+    .loading-spinner {
+        width: 40px;
+        height: 40px;
+    }
+
+    /* Improved touch targets */
+    a, button, input[type="button"], input[type="submit"] {
+        min-height: 44px;
+        min-width: 44px;
+        padding: 12px;
+    }
+
+    /* Better spacing */
+    .mb-3 {
+        margin-bottom: 15px;
+    }
+
+    .mt-3 {
+        margin-top: 15px;
+    }
+
+    .p-3 {
+        padding: 15px;
+    }
+
+    /* Font size adjustments */
+    h1 {
+        font-size: 24px;
+    }
+
+    h2 {
+        font-size: 20px;
+    }
+
+    h3 {
+        font-size: 18px;
+    }
+
+    p {
+        font-size: 14px;
+        line-height: 1.5;
+    }
+}
+
+/* Tablet styles */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+    .section {
+        padding: 20px;
+    }
+
+    .grid-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .card {
+        margin-bottom: 20px;
+    }
+
+    button,
+    .submit-btn {
+        width: auto;
+        min-width: 200px;
+    }
+}
+
+/* High-DPI screens */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    /* Optimize images for high-DPI displays */
+    img {
+        image-rendering: -webkit-optimize-contrast;
+    }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: #1a1a1a;
+        color: #ffffff;
+    }
+
+    .card {
+        background-color: #2d2d2d;
+    }
+
+    input, select, textarea {
+        background-color: #333;
+        color: #fff;
+        border-color: #444;
+    }
+
+    .nav-link {
+        color: #fff;
+    }
+
+    .modal-content {
+        background-color: #2d2d2d;
+    }
+}
+
+/* Print styles */
+@media print {
+    .no-print {
+        display: none !important;
+    }
+
+    body {
+        padding: 0;
+        margin: 0;
+    }
+
+    .section {
+        page-break-inside: avoid;
+    }
+}

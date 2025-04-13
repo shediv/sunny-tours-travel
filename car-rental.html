@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Rental - Sunny Tours and Travel</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        /* Additional styles for car rental */
+        .car-grid {
+            display: flex;
+            flex-direction: column;
+            max-width: 800px;
+            margin: 0 auto;
+            gap: 1.5rem;
+            padding: 1rem;
+        }
+
+        .car-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+
+        .car-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+        }
+
+        .car-image-container {
+            position: relative;
+            width: 100%;
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .car-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .car-card:hover .car-image {
+            transform: scale(1.05);
+        }
+
+        .car-details {
+            padding: 1rem;
+        }
+
+        .car-details h3 {
+            color: var(--text);
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .car-price {
+            font-size: 1.1rem;
+            color: var(--primary);
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+        }
+
+        .car-features {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .car-feature {
+            background: var(--background);
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            color: var(--text);
+        }
+
+        .price-calculator {
+            background: var(--background);
+            padding: 1rem;
+            border-radius: 8px;
+            margin-top: 1rem;
+        }
+
+        .date-picker {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 0.75rem;
+            margin-bottom: 1rem;
+        }
+
+        .date-picker label {
+            display: block;
+            margin-bottom: 0.25rem;
+            color: var(--text);
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .date-picker input[type="date"] {
+            width: 100%;
+            padding: 0.5rem;
+            border: 1px solid #e0e0e0;
+            border-radius: 4px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 0.9rem;
+        }
+
+        .total-section {
+            margin-top: 0.75rem;
+            padding-top: 0.75rem;
+            border-top: 1px solid #e0e0e0;
+        }
+
+        .total-section p {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+            color: var(--text);
+        }
+
+        .error-message, .success-message {
+            font-size: 0.85rem;
+            margin-top: 0.5rem;
+            display: none;
+            text-align: center;
+        }
+
+        .error-message {
+            color: var(--error);
+        }
+
+        .success-message {
+            color: var(--success);
+        }
+
+        @media (min-width: 768px) {
+            .car-grid {
+                padding: 2rem;
+                gap: 2rem;
+            }
+
+            .car-image-container {
+                height: 250px;
+            }
+
+            .car-details {
+                padding: 1.5rem;
+            }
+
+            .car-details h3 {
+                font-size: 1.5rem;
+            }
+
+            .car-price {
+                font-size: 1.25rem;
+            }
+
+            .car-feature {
+                font-size: 0.9rem;
+                padding: 0.25rem 0.75rem;
+            }
+
+            .date-picker {
+                grid-template-columns: 1fr 1fr;
+                gap: 1rem;
+            }
+
+            .price-calculator {
+                padding: 1.5rem;
+            }
+
+            .date-picker input[type="date"] {
+                padding: 0.75rem;
+                font-size: 1rem;
+            }
+
+            .total-section p {
+                font-size: 1rem;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .car-image-container {
+                height: 300px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <nav class="nav-container">
+            <img src="https://t3.ftcdn.net/jpg/01/90/05/00/360_F_190050064_S5uj8wBGQegN6ZF6Kl7ss5rs9abwtqmB.jpg" alt="Sunny Tours and Travel Logo" class="logo">
+            <button class="menu-toggle" aria-label="Toggle menu">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul class="nav-menu">
+                <ol><a href="index.html" class="nav-link">Home</a></ol>
+                <ol><a href="index.html#services" class="nav-link">Services</a></ol>
+                <ol><a href="car-rental.html" class="nav-link">Car Rental</a></ol>
+                <ol><a href="book-cab.html" class="nav-link">Book Cab</a></ol>
+                <ol><a href="index.html#contact" class="nav-link">Contact</a></ol>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="section" style="margin-top: 60px;">
+            <h2 class="section-title">Rent a Car in Goa</h2>
+            <div class="car-grid">
+                <!-- Car 1 -->
+                <div class="car-card">
+                    <div class="car-image-container">
+                        <img src="https://www.marutisuzuki.com/price-list/-/media/D9EF6A0D83E64B66845A983BC63843ED.ashx" alt="Maruti Suzuki Swift" class="car-image">
+                    </div>
+                    <div class="car-details">
+                        <h3>Maruti Suzuki Swift</h3>
+                        <p class="car-price">₹1500/day</p>
+                        <div class="car-features">
+                            <span class="car-feature">5 Seater</span>
+                            <span class="car-feature">Petrol</span>
+                            <span class="car-feature">Manual</span>
+                            <span class="car-feature">AC</span>
+                        </div>
+                        <div class="price-calculator">
+                            <div class="date-picker">
+                                <div>
+                                    <label>From:</label>
+                                    <input type="date" class="form-input" name="start-date" required>
+                                </div>
+                                <div>
+                                    <label>To:</label>
+                                    <input type="date" class="form-input" name="end-date" required>
+                                </div>
+                            </div>
+                            <div class="total-section">
+                                <p>Total Days: <span class="total-days">0</span></p>
+                                <p>Total Cost: ₹<span class="total-cost">0</span></p>
+                            </div>
+                            <button class="submit-btn">Book Now</button>
+                            <div class="error-message"></div>
+                            <div class="success-message"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Car 2 -->
+                <div class="car-card">
+                    <div class="car-image-container">
+                        <img src="https://cdni.autocarindia.com/Utils/ImageResizerV2.ashx?n=https://cdni.autocarindia.com/Galleries/20201105013406_Hyundai-i20-front-1.jpg&w=872&h=578&q=75&c=1" alt="Hyundai i20" class="car-image">
+                    </div>
+                    <div class="car-details">
+                        <h3>Hyundai i20</h3>
+                        <p class="car-price">₹1800/day</p>
+                        <div class="car-features">
+                            <span class="car-feature">5 Seater</span>
+                            <span class="car-feature">Petrol</span>
+                            <span class="car-feature">Automatic</span>
+                            <span class="car-feature">AC</span>
+                        </div>
+                        <div class="price-calculator">
+                            <div class="date-picker">
+                                <div>
+                                    <label>From:</label>
+                                    <input type="date" class="form-input" name="start-date" required>
+                                </div>
+                                <div>
+                                    <label>To:</label>
+                                    <input type="date" class="form-input" name="end-date" required>
+                                </div>
+                            </div>
+                            <div class="total-section">
+                                <p>Total Days: <span class="total-days">0</span></p>
+                                <p>Total Cost: ₹<span class="total-cost">0</span></p>
+                            </div>
+                            <button class="submit-btn">Book Now</button>
+                            <div class="error-message"></div>
+                            <div class="success-message"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Car 3 -->
+                <div class="car-card">
+                    <div class="car-image-container">
+                        <img src="https://static3.toyotabharat.com/images/showroom/innova-hycross/super-white.png" alt="Toyota Innova" class="car-image">
+                    </div>
+                    <div class="car-details">
+                        <h3>Toyota Innova</h3>
+                        <p class="car-price">₹2500/day</p>
+                        <div class="car-features">
+                            <span class="car-feature">7 Seater</span>
+                            <span class="car-feature">Diesel</span>
+                            <span class="car-feature">Automatic</span>
+                            <span class="car-feature">AC</span>
+                        </div>
+                        <div class="price-calculator">
+                            <div class="date-picker">
+                                <div>
+                                    <label>From:</label>
+                                    <input type="date" class="form-input" name="start-date" required>
+                                </div>
+                                <div>
+                                    <label>To:</label>
+                                    <input type="date" class="form-input" name="end-date" required>
+                                </div>
+                            </div>
+                            <div class="total-section">
+                                <p>Total Days: <span class="total-days">0</span></p>
+                                <p>Total Cost: ₹<span class="total-cost">0</span></p>
+                            </div>
+                            <button class="submit-btn">Book Now</button>
+                            <div class="error-message"></div>
+                            <div class="success-message"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2024 Sunny Tours and Travel. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const carCards = document.querySelectorAll('.car-card');
+            
+            carCards.forEach(card => {
+                const startDate = card.querySelector('input[name="start-date"]');
+                const endDate = card.querySelector('input[name="end-date"]');
+                const totalDays = card.querySelector('.total-days');
+                const totalCost = card.querySelector('.total-cost');
+                const bookButton = card.querySelector('.submit-btn');
+                const errorMessage = card.querySelector('.error-message');
+                const successMessage = card.querySelector('.success-message');
+                const pricePerDay = parseInt(card.querySelector('.car-price').textContent.match(/\d+/)[0]);
+
+                // Set minimum date as today
+                const today = new Date().toISOString().split('T')[0];
+                startDate.min = today;
+                endDate.min = today;
+
+                function calculateDays() {
+                    const start = new Date(startDate.value);
+                    const end = new Date(endDate.value);
+
+                    if (startDate.value && endDate.value) {
+                        if (end < start) {
+                            errorMessage.textContent = 'End date cannot be before start date';
+                            errorMessage.style.display = 'block';
+                            totalDays.textContent = '0';
+                            totalCost.textContent = '0';
+                            return;
+                        }
+
+                        const diffTime = Math.abs(end - start);
+                        const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+                        
+                        totalDays.textContent = diffDays;
+                        totalCost.textContent = (diffDays * pricePerDay).toLocaleString();
+                        errorMessage.style.display = 'none';
+                    }
+                }
+
+                startDate.addEventListener('change', calculateDays);
+                endDate.addEventListener('change', calculateDays);
+
+                bookButton.addEventListener('click', function() {
+                    if (!startDate.value || !endDate.value) {
+                        errorMessage.textContent = 'Please select both start and end dates';
+                        errorMessage.style.display = 'block';
+                        successMessage.style.display = 'none';
+                        return;
+                    }
+
+                    if (new Date(endDate.value) < new Date(startDate.value)) {
+                        errorMessage.textContent = 'End date cannot be before start date';
+                        errorMessage.style.display = 'block';
+                        successMessage.style.display = 'none';
+                        return;
+                    }
+
+                    errorMessage.style.display = 'none';
+                    successMessage.textContent = 'Booking successful! We will contact you shortly.';
+                    successMessage.style.display = 'block';
+                });
+            });
+        });
+
+        // Mobile menu toggle
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navMenu = document.querySelector('.nav-menu');
+
+        menuToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            menuToggle.querySelector('i').classList.toggle('fa-bars');
+            menuToggle.querySelector('i').classList.toggle('fa-times');
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!navMenu.contains(e.target) && !menuToggle.contains(e.target) && navMenu.classList.contains('active')) {
+                navMenu.classList.remove('active');
+                menuToggle.querySelector('i').classList.add('fa-bars');
+                menuToggle.querySelector('i').classList.remove('fa-times');
+            }
+        });
+
+        // Close menu when clicking a link
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+                menuToggle.querySelector('i').classList.add('fa-bars');
+                menuToggle.querySelector('i').classList.remove('fa-times');
+            });
+        });
+    </script>
+</body>
+</html>
