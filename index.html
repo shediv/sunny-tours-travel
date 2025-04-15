@@ -47,17 +47,18 @@
 <body>
     <header class="header">
         <nav class="nav-container">
-            <img src="logo.webp" alt="Sunny Tours and Travel Logo" class="logo">
+            <a href="index.html"><img src="logo.jpeg" alt="Sunny Tours and Travel Logo" class="logo"></a>
             <button class="menu-toggle" aria-label="Toggle menu">
                 <i class="fas fa-bars"></i>
             </button>
             <ul class="nav-menu">
-                <ol><a href="#home" class="nav-link">Home</a></ol>
-                <ol><a href="#services" class="nav-link">Services</a></ol>
-                <ol><a href="car-rental.html" class="nav-link">Car Rental</a></ol>
-                <ol><a href="book-cab.html" class="nav-link">Book Cab</a></ol>
-                <ol><a href="tour-packages.html" class="nav-link">Tour Packages</a></ol>
-                <ol><a href="#contact" class="nav-link">Contact</a></ol>
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="index.html#services" class="nav-link">Services</a></li>
+                <li><a href="car-rental.html" class="nav-link">Car Rental</a></li>
+                <li><a href="book-cab.html" class="nav-link">Book Cab</a></li>
+                <li><a href="tour-packages.html" class="nav-link">Tour Packages</a></li>
+                <li><a href="hotels.html" class="nav-link">Rooms</a></li>
+                <li><a href="index.html#contact" class="nav-link">Contact</a></li>
             </ul>
         </nav>
     </header>
@@ -65,8 +66,8 @@
     <main>
         <section id="home" class="hero" style="height: 425px; background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?auto=format&fit=crop&w=2000&q=80');">
             <div class="hero-content">
-                <h1 class="hero-title">Experience the Magic of Goa</h1>
-                <p>Discover the perfect blend of sun, sand, and culture</p>
+                <h1 class="hero-title">Sunny Tours and Travel</h1>
+                <p>Discover the perfect blend of sun, sand, and culture of Goa</p>
             </div>
         </section>
 
@@ -76,27 +77,27 @@
                 <div class="service-card">
                     <h3>Car Rentals</h3>
                     <p>Self-drive cars starting from ₹1000/day</p>
-                    <a href="car-rental.html" class="submit-btn" style="margin-top: 1rem;">Browse Cars</a>
+                    <a href="car-rental.html" class="submit-btn">Browse Cars</a>
                 </div>
                 <div class="service-card">
                     <h3>Cab Services</h3>
                     <p>24/7 reliable cab services across Goa</p>
-                    <a href="book-cab.html" class="submit-btn" style="margin-top: 1rem;">Book Now</a>
+                    <a href="book-cab.html" class="submit-btn">Book Now</a>
                 </div>
                 <div class="service-card">
                     <h3>Tour Packages</h3>
-                    <p>Explore North & South Goa with our curated tour packages</p>
-                    <a href="tour-packages.html" class="submit-btn" style="margin-top: 1rem;">View Packages</a>
+                    <p>Explore Goa and Nearby places with our curated tour packages</p>
+                    <a href="tour-packages.html" class="submit-btn">View Packages</a>
                 </div>
                 <div class="service-card">
                     <h3>Hotel Booking</h3>
                     <p>Best deals on premium accommodations</p>
-                    <a href="#contact" class="submit-btn" style="margin-top: 1rem;">Book Now</a>
+                    <a href="hotels.html" class="submit-btn">Book Now</a>
                 </div>
                 <div class="service-card">
                     <h3>Adventure Tours</h3>
                     <p>Exciting water sports and adventure activities</p>
-                    <a href="#contact" class="submit-btn" style="margin-top: 1rem;">Learn More</a>
+                    <a href="#contact" class="submit-btn">Learn More</a>
                 </div>
             </div>
         </section>
@@ -130,34 +131,6 @@
     <footer class="footer">
         <p>&copy; 2024 Sunny Tours and Travel. All rights reserved.</p>
     </footer>
-    <script>
-        // Mobile menu toggle
-        const menuToggle = document.querySelector('.menu-toggle');
-        const navMenu = document.querySelector('.nav-menu');
-
-        menuToggle.addEventListener('click', () => {
-            navMenu.classList.toggle('active');
-            menuToggle.querySelector('i').classList.toggle('fa-bars');
-            menuToggle.querySelector('i').classList.toggle('fa-times');
-        });
-
-        // Close menu when clicking outside
-        document.addEventListener('click', (e) => {
-            if (!navMenu.contains(e.target) && !menuToggle.contains(e.target) && navMenu.classList.contains('active')) {
-                navMenu.classList.remove('active');
-                menuToggle.querySelector('i').classList.add('fa-bars');
-                menuToggle.querySelector('i').classList.remove('fa-times');
-            }
-        });
-
-        // Close menu when clicking a link
-        document.querySelectorAll('.nav-link').forEach(link => {s
-            link.addEventListener('click', () => {
-                navMenu.classList.remove('active');
-                menuToggle.querySelector('i').classList.add('fa-bars');
-                menuToggle.querySelector('i').classList.remove('fa-times');
-            });
-        });
-    </script>
+    <script src="js/main.js"></script>
 </body>
 </html>

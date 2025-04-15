@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tour Packages - Sunny Tours and Travel</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        .packages-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+            padding: 1rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .package-card {
+            background: var(--white);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(249, 115, 22, 0.1);
+        }
+
+        .package-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .package-content {
+            padding: 1.5rem;
+        }
+
+        .package-title {
+            font-size: 1.5rem;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .package-timing {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--text-light);
+            margin-bottom: 1rem;
+        }
+
+        .package-timing i {
+            color: var(--primary);
+        }
+
+        .places-list {
+            list-style: none;
+            margin-bottom: 1.5rem;
+        }
+
+        .places-list li {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .places-list i {
+            color: var(--primary);
+            font-size: 0.8rem;
+        }
+
+        .book-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--primary);
+            color: var(--white);
+            padding: 0.75rem 1.5rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: background-color 0.3s ease;
+        }
+
+        .book-btn:hover {
+            background: var(--primary-dark);
+        }
+
+        @media (min-width: 768px) {
+            .packages-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <nav class="nav-container">
+            <a href="index.html"><img src="logo.jpeg" alt="Sunny Tours and Travel Logo" class="logo"></a>
+            <button class="menu-toggle" aria-label="Toggle menu">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="index.html#services" class="nav-link">Services</a></li>
+                <li><a href="car-rental.html" class="nav-link">Car Rental</a></li>
+                <li><a href="book-cab.html" class="nav-link">Book Cab</a></li>
+                <li><a href="tour-packages.html" class="nav-link">Tour Packages</a></li>
+                <li><a href="hotels.html" class="nav-link">Rooms</a></li>
+                <li><a href="index.html#contact" class="nav-link">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main style="margin-top: 80px;">
+        <section class="section">
+            <h2 class="section-title">Our Hotels</h2>
+            <div class="packages-grid">
+                <!-- Porvorim Flat Package -->
+                <div class="package-card">
+                    <img src="4bhk.jpeg" alt="North Goa Tour" class="package-image">
+                    <div class="package-content">
+                        <h3 class="package-title">Pvt Pool Villa Alto Betim Porvorim</h3>
+                        <div class="package-timing">
+                            <i class="far fa-clock"></i>
+                            <span>9:00 AM to 5:30 PM</span>
+                        </div>
+                        <ul class="places-list">
+                            <li><i class="fas fa-map-marker-alt"></i> 4BHK</li>
+                            <li><i class="fas fa-map-marker-alt"></i> AC</li>
+                            <li><i class="fas fa-map-marker-alt"></i> Balcony</li>
+                        </ul>
+                        <a href="https://wa.me/919881465539?text=Hi,%20I'm%20interested%20in%20the%20Porvorim%20Goa%20Flat%20package" target="_blank" class="book-btn">
+                            <i class="fab fa-whatsapp"></i>
+                            Book Now
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Candolim Flat -->
+                <div class="package-card">
+                    <img src="candolim.jpeg" alt="North Goa Tour" class="package-image">
+                    <div class="package-content">
+                        <h3 class="package-title">Candolim Flat</h3>
+                        <div class="package-timing">
+                            <i class="far fa-clock"></i>
+                            <span>9:00 AM to 5:30 PM</span>
+                        </div>
+                        <ul class="places-list">
+                            <li><i class="fas fa-map-marker-alt"></i> 4BHK</li>
+                            <li><i class="fas fa-map-marker-alt"></i> AC</li>
+                            <li><i class="fas fa-map-marker-alt"></i> Balcony</li>
+                        </ul>
+                        <a href="https://wa.me/919881465539?text=Hi,%20I'm%20interested%20in%20the%20Candolim%20Flat%20package" target="_blank" class="book-btn">
+                            <i class="fab fa-whatsapp"></i>
+                            Book Now
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Nerul Rooms -->
+                <div class="package-card">
+                    <img src="nerul.png" alt="North Goa Tour" class="package-image">
+                    <div class="package-content">
+                        <h3 class="package-title">Nerul Rooms</h3>
+                        <div class="package-timing">
+                            <i class="far fa-clock"></i>
+                            <span>9:00 AM to 5:30 PM</span>
+                        </div>
+                        <ul class="places-list">
+                            <li><i class="fas fa-map-marker-alt"></i> 4BHK</li>
+                            <li><i class="fas fa-map-marker-alt"></i> AC</li>
+                            <li><i class="fas fa-map-marker-alt"></i> Balcony</li>
+                        </ul>
+                        <a href="https://wa.me/919881465539?text=Hi,%20I'm%20interested%20in%20the%20Nerul%20rooms%20package" target="_blank" class="book-btn">
+                            <i class="fab fa-whatsapp"></i>
+                            Book Now
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Calangute Rooms -->
+                <div class="package-card">
+                    <img src="calangute.jpeg" alt="North Goa Tour" class="package-image">
+                    <div class="package-content">
+                        <h3 class="package-title">Calangute Rooms</h3>
+                        <div class="package-timing">
+                            <i class="far fa-clock"></i>
+                            <span>9:00 AM to 5:30 PM</span>
+                        </div>
+                        <ul class="places-list">
+                            <li><i class="fas fa-map-marker-alt"></i> 4BHK</li>
+                            <li><i class="fas fa-map-marker-alt"></i> AC</li>
+                            <li><i class="fas fa-map-marker-alt"></i> Balcony</li>
+                        </ul>
+                        <a href="https://wa.me/919881465539?text=Hi,%20I'm%20interested%20in%20the%20Calangute%20Rooms%20package" target="_blank" class="book-btn">
+                            <i class="fab fa-whatsapp"></i>
+                            Book Now
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2024 Sunny Tours and Travel. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navMenu = document.querySelector('.nav-menu');
+
+        menuToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            menuToggle.querySelector('i').classList.toggle('fa-bars');
+            menuToggle.querySelector('i').classList.toggle('fa-times');
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!navMenu.contains(e.target) && !menuToggle.contains(e.target) && navMenu.classList.contains('active')) {
+                navMenu.classList.remove('active');
+                menuToggle.querySelector('i').classList.add('fa-bars');
+                menuToggle.querySelector('i').classList.remove('fa-times');
+            }
+        });
+
+        // Close menu when clicking a link
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+                menuToggle.querySelector('i').classList.add('fa-bars');
+                menuToggle.querySelector('i').classList.remove('fa-times');
+            });
+        });
+    </script>
+</body>
+</html>

@@ -82,8 +82,8 @@
         }
 
         .price-calculator {
-            background: var(--background);
-            padding: 1rem;
+            /* background: var(--background); */
+            /* padding: 1rem; */
             border-radius: 8px;
             margin-top: 1rem;
         }
@@ -174,7 +174,7 @@
             }
 
             .price-calculator {
-                padding: 1.5rem;
+                /* padding: 1.5rem; */
             }
 
             .date-picker input[type="date"] {
@@ -197,16 +197,18 @@
 <body>
     <header class="header">
         <nav class="nav-container">
-            <img src="https://t3.ftcdn.net/jpg/01/90/05/00/360_F_190050064_S5uj8wBGQegN6ZF6Kl7ss5rs9abwtqmB.jpg" alt="Sunny Tours and Travel Logo" class="logo">
+            <a href="index.html"><img src="logo.jpeg" alt="Sunny Tours and Travel Logo" class="logo"></a>
             <button class="menu-toggle" aria-label="Toggle menu">
                 <i class="fas fa-bars"></i>
             </button>
             <ul class="nav-menu">
-                <ol><a href="index.html" class="nav-link">Home</a></ol>
-                <ol><a href="index.html#services" class="nav-link">Services</a></ol>
-                <ol><a href="car-rental.html" class="nav-link">Car Rental</a></ol>
-                <ol><a href="book-cab.html" class="nav-link">Book Cab</a></ol>
-                <ol><a href="index.html#contact" class="nav-link">Contact</a></ol>
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="index.html#services" class="nav-link">Services</a></li>
+                <li><a href="car-rental.html" class="nav-link">Car Rental</a></li>
+                <li><a href="book-cab.html" class="nav-link">Book Cab</a></li>
+                <li><a href="tour-packages.html" class="nav-link">Tour Packages</a></li>
+                <li><a href="hotels.html" class="nav-link">Rooms</a></li>
+                <li><a href="index.html#contact" class="nav-link">Contact</a></li>
             </ul>
         </nav>
     </header>
@@ -215,14 +217,14 @@
         <section class="section" style="margin-top: 60px;">
             <h2 class="section-title">Rent a Car in Goa</h2>
             <div class="car-grid">
-                <!-- Car 1 -->
+                <!-- Car 1 Maruti Suzuki Dzire -->
                 <div class="car-card">
                     <div class="car-image-container">
-                        <img src="https://www.marutisuzuki.com/price-list/-/media/D9EF6A0D83E64B66845A983BC63843ED.ashx" alt="Maruti Suzuki Swift" class="car-image">
+                        <img src="https://stimg.cardekho.com/images/carexteriorimages/930x620/Maruti/Swift-Dzire/7664/1675859508504/front-left-side-47.jpg" alt="Maruti Suzuki Dzire" class="car-image">
                     </div>
                     <div class="car-details">
-                        <h3>Maruti Suzuki Swift</h3>
-                        <p class="car-price">₹1500/day</p>
+                        <h3>Maruti Suzuki Dzire</h3>
+                        <!-- <p class="car-price">₹1500/day</p> -->
                         <div class="car-features">
                             <span class="car-feature">5 Seater</span>
                             <span class="car-feature">Petrol</span>
@@ -230,7 +232,7 @@
                             <span class="car-feature">AC</span>
                         </div>
                         <div class="price-calculator">
-                            <div class="date-picker">
+                            <!-- <div class="date-picker">
                                 <div>
                                     <label>From:</label>
                                     <input type="date" class="form-input" name="start-date" required>
@@ -239,26 +241,29 @@
                                     <label>To:</label>
                                     <input type="date" class="form-input" name="end-date" required>
                                 </div>
-                            </div>
-                            <div class="total-section">
+                            </div> -->
+                            <!-- <div class="total-section">
                                 <p>Total Days: <span class="total-days">0</span></p>
                                 <p>Total Cost: ₹<span class="total-cost">0</span></p>
-                            </div>
-                            <button class="submit-btn">Book Now</button>
-                            <div class="error-message"></div>
-                            <div class="success-message"></div>
+                            </div> -->
+                            <a href="https://wa.me/919881465539?text=Hi,%20I'm%20interested%20in%20the%Maruti%Dzire%20Car%20Rental" target="_blank" class="submit-btn">
+                                <i class="fab fa-whatsapp"></i>
+                                Book Now
+                            </a>
+                            <!-- <div class="error-message"></div>
+                            <div class="success-message"></div> -->
                         </div>
                     </div>
                 </div>
 
-                <!-- Car 2 -->
+                <!-- Car 2 Toyota Innova Crysta -->
                 <div class="car-card">
                     <div class="car-image-container">
-                        <img src="https://cdni.autocarindia.com/Utils/ImageResizerV2.ashx?n=https://cdni.autocarindia.com/Galleries/20201105013406_Hyundai-i20-front-1.jpg&w=872&h=578&q=75&c=1" alt="Hyundai i20" class="car-image">
+                        <img src="https://imgd.aeplcdn.com/664x374/n/cw/ec/140809/innova-crysta-exterior-right-front-three-quarter-2.png?isig=0&q=80" alt="Toyota Innova Crysta" class="car-image">
                     </div>
                     <div class="car-details">
-                        <h3>Hyundai i20</h3>
-                        <p class="car-price">₹1800/day</p>
+                        <h3>Toyota Innova Crysta</h3>
+                        <!-- <p class="car-price">₹1800/day</p> -->
                         <div class="car-features">
                             <span class="car-feature">5 Seater</span>
                             <span class="car-feature">Petrol</span>
@@ -266,7 +271,7 @@
                             <span class="car-feature">AC</span>
                         </div>
                         <div class="price-calculator">
-                            <div class="date-picker">
+                            <!-- <div class="date-picker">
                                 <div>
                                     <label>From:</label>
                                     <input type="date" class="form-input" name="start-date" required>
@@ -279,30 +284,33 @@
                             <div class="total-section">
                                 <p>Total Days: <span class="total-days">0</span></p>
                                 <p>Total Cost: ₹<span class="total-cost">0</span></p>
-                            </div>
-                            <button class="submit-btn">Book Now</button>
+                            </div> -->
+                            <a href="https://wa.me/919881465539?text=Hi,%20I'm%20interested%20in%20the%Toyota%Innova%20Crysta%20Car%20Rental" target="_blank" class="submit-btn">
+                                <i class="fab fa-whatsapp"></i>
+                                Book Now
+                            </a>
                             <div class="error-message"></div>
                             <div class="success-message"></div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Car 3 -->
+                <!-- Car 3 Thar -->
                 <div class="car-card">
                     <div class="car-image-container">
-                        <img src="https://static3.toyotabharat.com/images/showroom/innova-hycross/super-white.png" alt="Toyota Innova" class="car-image">
+                        <img src="https://stimg2.cardekho.com/images/carNewsimages/userimages/650X420/26530/1608875118493/GeneralNews.jpg" alt="Toyota Innova" class="car-image">
                     </div>
                     <div class="car-details">
-                        <h3>Toyota Innova</h3>
-                        <p class="car-price">₹2500/day</p>
+                        <h3>Mahindra Thar</h3>
+                        <!-- <p class="car-price">₹2500/day</p> -->
                         <div class="car-features">
-                            <span class="car-feature">7 Seater</span>
-                            <span class="car-feature">Diesel</span>
-                            <span class="car-feature">Automatic</span>
+                            <span class="car-feature">5  Seater</span>
+                            <span class="car-feature">Diesel/Petrol</span>
+                            <span class="car-feature">Automatic/Manual</span>
                             <span class="car-feature">AC</span>
                         </div>
                         <div class="price-calculator">
-                            <div class="date-picker">
+                            <!-- <div class="date-picker">
                                 <div>
                                     <label>From:</label>
                                     <input type="date" class="form-input" name="start-date" required>
@@ -315,8 +323,50 @@
                             <div class="total-section">
                                 <p>Total Days: <span class="total-days">0</span></p>
                                 <p>Total Cost: ₹<span class="total-cost">0</span></p>
+                            </div> -->
+                            <a href="https://wa.me/919881465539?text=Hi,%20I'm%20interested%20in%20the%Mahindra%Thar%20Car%20Rental" target="_blank" class="submit-btn">
+                                <i class="fab fa-whatsapp"></i>
+                                Book Now
+                            </a>
+                            <div class="error-message"></div>
+                            <div class="success-message"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Car 4 Toyota Fortuner -->
+                <div class="car-card">
+                    <div class="car-image-container">
+                        <img src="https://img.autocarindia.com/Reviews/Fortuner-static.jpg" alt="Toyota Innova" class="car-image">
+                    </div>
+                    <div class="car-details">
+                        <h3>Mahindra Thar</h3>
+                        <!-- <p class="car-price">₹2500/day</p> -->
+                        <div class="car-features">
+                            <span class="car-feature">7 Seater</span>
+                            <span class="car-feature">Diesel/Petrol</span>
+                            <span class="car-feature">Automatic/Manual</span>
+                            <span class="car-feature">AC</span>
+                        </div>
+                        <div class="price-calculator">
+                            <!-- <div class="date-picker">
+                                <div>
+                                    <label>From:</label>
+                                    <input type="date" class="form-input" name="start-date" required>
+                                </div>
+                                <div>
+                                    <label>To:</label>
+                                    <input type="date" class="form-input" name="end-date" required>
+                                </div>
                             </div>
-                            <button class="submit-btn">Book Now</button>
+                            <div class="total-section">
+                                <p>Total Days: <span class="total-days">0</span></p>
+                                <p>Total Cost: ₹<span class="total-cost">0</span></p>
+                            </div> -->
+                            <a href="https://wa.me/919881465539?text=Hi,%20I'm%20interested%20in%20the%Mahindra%Thar%20Car%20Rental" target="_blank" class="submit-btn">
+                                <i class="fab fa-whatsapp"></i>
+                                Book Now
+                            </a>
                             <div class="error-message"></div>
                             <div class="success-message"></div>
                         </div>
